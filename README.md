@@ -35,6 +35,13 @@ Cependant, si vous voulez compiler vous-même le projet :
 ➡️ Une fois que le simulateur est compilé, il suffit d'exécuter **le fichier `interface.py`** pour pouvoir tout gérér !
 Par exemple, appuyez sur choisir ROM, choisissez le fichier snake.asb dans le dossier roms/, appuyez sur compiler la rom, puis sur exécuter, et vous pourrez jouer à Snake !
 
+### Linux
+
+Pour compiler le project sur linux, la commande suivante peut être utilisée:
+```
+cc -O2 -D LINUX simulator.c -o sim -lSDL2
+```
+
 ---
 
 ## Suivez le projet !

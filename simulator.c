@@ -5,8 +5,13 @@
 #include <time.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "inc/SDL.h"
+
+#ifndef LINUX
 //chiant à installer, lien d'un tres bon tuto : https://www.youtube.com/watch?v=uv4fda8Z8Tk
+    #include "inc/SDL.h"
+#else
+    #include <SDL2/SDL.h>
+#endif
 
 
 #define MAX_LINE 256
@@ -94,7 +99,7 @@ int gate_type_from_string(const char* str) {
 
 
 void afficher_instruction(const Instruction* inst) {
-    printf("ID %d : %s (%d <- %d %d %d)", inst->id, inst->type,
+    printf("ID %d : %d (%d <- %d %d %d)", inst->id, inst->type,
            inst->output, inst->input1, inst->input2, inst->input3);
     if (inst->has_const) {
         printf("  CONST = %d", inst->const_value);
